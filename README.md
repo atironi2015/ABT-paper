@@ -28,31 +28,52 @@ D:= map< F -> F | x :-> x-ComplexConjugate(x) >;
 // Quaternion algebra
 
 F<i,j,k> := QuaternionAlgebra< RealField() | -1, -1 >;
+ 
 S:= map< F -> F | x :-> i*x*(1/i) >;
+ 
 D:= map< F -> F | x :-> 0 >;
 
 
+ 
 // PosCom 
+ 
 // INPUT: d,s positive integers and a an element of the division field
+
 // OUTPUT: C_{d,s}(a)
 
 PosCom:=function(d,s,a)
+ 
 C:= [u: u in [VectorSpace(GF(2),d+s)!v : v in VectorSpace(GF(2),d+s)\
 ]| Weight(u) eq d];
+
 A:=0;
+
  for k in [1..#C] do
+ 
   b:=a;
+ 
    for l in [1..d+s] do
+ 
     if C[k][l] eq 0 then
+ 
      b:=S(b);
+ 
      else
+ 
      b:=D(b); 
+ 
     end if;
+ 
    end for;
+ 
   A:=A+b;
+ 
  end for;
+ 
 return A;
+ 
 end function;
+ 
 
 
 // MultPol function
