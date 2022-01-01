@@ -6,17 +6,24 @@
 // A field with four elements
 
 F<w>:=GF(4); 
+ 
 S:= map< F -> F | x :-> x^2 >;
+ 
 D:= map< F -> F | x :-> w*(S(x)+x) >;
+ 
 
 
 // The complex field
 
 F<i>:=ComplexField();
+ 
 R<x>:=PolynomialRing(F);
+
 S:= map< F -> F | x :-> ComplexConjugate(x) >;
+
 D:= map< F -> F | x :-> x-ComplexConjugate(x) >;
 
+ 
 
 // Quaternion algebra
 
