@@ -1,4 +1,5 @@
-// Write in Magma only one of the following three blocks of Magma instructions before to load all the library "Magma Functions - Skew Resultants.txt", depending on which division ring you want to work
+// Write in Magma only one of the following three blocks of Magma instructions before to load all the library "Magma Functions - Skew Resultants.txt", 
+// depending on which division ring you want to work
 
 
 // Block 1 - A field with four elements
